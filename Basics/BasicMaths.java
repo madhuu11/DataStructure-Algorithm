@@ -11,9 +11,9 @@ public class BasicMaths {
 		
 //		Given a positive integer n, count the number of digits in n that divide n evenly (i.e., without leaving a remainder). Return the total number of such digits.
 //		eg : n = 12, no of digits = 2 ie., 1,2. can 12/1 and 12/2? output : 2
-//		System.out.println(countDigits(n));
+		System.out.println(countDigits(n));
 		
-		Reverse Integer
+//		Reverse Integer
 		reverseInt(n);
 		palindrome(n);
 		
