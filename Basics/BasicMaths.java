@@ -33,16 +33,16 @@ public class BasicMaths {
 	}
 
 	private static void reverseInt(int i) {
-		int reverse =0;
-		while(i>0) {
-			int rem = i%10;
-			System.out.println("rem = i%10 : "+rem);
-			reverse = reverse * 10 + rem;
-			System.out.println(reverse);
+		long reverse =0;
+		while(i!=0) {
+			reverse = reverse * 10 + i%10;
 			i=i/10;
-			System.out.println(" i = i/10 : "+i);
 		}
-		System.out.println(reverse);
+		if(reverse< Integer.MIN_VALUE|| reverse> Integer.MAX_VALUE) {
+			System.out.println(0);
+		}else {
+			System.out.println((int)reverse);
+		}
 	}
 
 	private static int countDigits(int n) {
