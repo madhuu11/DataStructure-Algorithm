@@ -13,9 +13,9 @@ public class BasicMaths {
 //		eg : n = 12, no of digits = 2 ie., 1,2. can 12/1 and 12/2? output : 2
 //		System.out.println(countDigits(n));
 		
-//		Reverse Integer
+		Reverse Integer
 		reverseInt(n);
-//		palindrome(n);
+		palindrome(n);
 		
 	}
 
