@@ -4,6 +4,7 @@ public class Recursion {
 	static int n = 10;
 
 	public static void main(String[] args) {
+//		Print 1 To N Without Loop
 		printNos();
 	}
 
