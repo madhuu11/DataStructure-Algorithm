@@ -12,8 +12,52 @@ public class Pattern {
 		pattern6(n);
 		pattern7(n);
 		pattern8(n);
+		pattern9(n); //diamond problem
+		pattern10(n);
 	}
 
+	private static void pattern10(int n) {
+		for(int i=0; i<n; i++) {
+			for(int j=1; j<=i;j++) {
+				System.out.print("*");
+			}
+			System.out.println(" ");
+		}
+		for(int i=n; i>=0; i--) {
+			for(int j=0; j<i; j++) {
+				System.out.print("*");
+			}
+			System.out.println(" ");
+		}
+	}
+
+	private static void pattern9(int n) {
+		for(int i=0; i<n; i++) {
+			for (int j = 0; j < n-i-1; j++ ) {
+				System.out.print(" ");
+			}
+			for (int j = 0; j < 2*i+1; j++) {
+				System.out.print("*");
+			}
+			for (int j = 0; j < n-i; j++) {
+				System.out.print(" ");
+			}
+			System.out.println(" ");
+		}
+		for(int i=n; i>0; i--) {
+			for(int j=0; j<n-i; j++) {
+				System.out.print(" ");
+			}
+			for(int j=0; j<2*i-1; j++) {
+				System.out.print("*");
+			}
+			for(int j=0; j<n-i; j++) {
+				System.out.print(" ");
+			}
+			System.out.println(" ");
+		}
+	}
+	
 	private static void pattern8(int n) {
 		for(int i=n; i>0; i--) {
 			for(int j=0; j<n-i; j++) {
