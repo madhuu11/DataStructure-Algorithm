@@ -14,6 +14,19 @@ public class Pattern {
 		pattern8(n);
 		pattern9(n); //diamond problem
 		pattern10(n);
+		pattern11(6);//Binary Number Triangle Pattern
+	}
+
+	private static void pattern11(int n) {
+		for(int i=0; i<n; i++) {
+			for(int j=0; j<=i; j++) {
+				if((i+j)%2==0) {
+					System.out.print(1);
+				}else
+				System.out.print(0);
+			}
+			System.out.println(" ");
+		}
 	}
 
 	private static void pattern10(int n) {
