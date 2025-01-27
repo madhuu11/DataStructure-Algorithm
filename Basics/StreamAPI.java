@@ -41,6 +41,20 @@ public class StreamAPI {
 //		Given a String, find the repeated character in it using Stream functions
 		repeatedCh(string);
 
+//		Given a list of integers, sort all the values present in it using Stream functions
+		sortListOfInt(intList);
+		
+//		Given a list of integers, sort all the values present in it in descending order using Stream functions
+		SortValueInDesc(intList);
+
+	}
+
+	private static void SortValueInDesc(List<Integer> intList) {
+		intList.stream().sorted(Collections.reverseOrder()).forEach(System.out::println);
+	}
+
+	private static void sortListOfInt(List<Integer> intList) {
+		intList.stream().sorted().forEach(System.out::println);
 	}
 
 	private static void repeatedCh(String string) {
