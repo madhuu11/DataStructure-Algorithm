@@ -15,6 +15,22 @@ public class Recursion {
 		
 //		Sum of first n terms
 		System.out.println(sumOfN(5));
+
+//		Factorials Less than or Equal to n
+		nFactorial(n);
+	}
+
+	private static void nFactorial(int n) {
+		List<Integer> facto = new ArrayList<>();
+		int f = 1;
+		for (int i = 1; i <= n; i++) {
+			f *= i;
+			if (n >= f) {
+				facto.add(f);
+			} else
+				break;
+		}
+		System.out.println(facto);
 	}
 
 	private static int sumOfN(int i) {
