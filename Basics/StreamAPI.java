@@ -46,7 +46,22 @@ public class StreamAPI {
 		
 //		Given a list of integers, sort all the values present in it in descending order using Stream functions
 		SortValueInDesc(intList);
+		
+//		Given an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct.
+		returnTrueIfDuplicates();
 
+	}
+	
+	private static void returnTrueIfDuplicates() {
+		int[] arr = {1,1,2,3};
+//		long n =  Arrays.stream(arr).distinct().count();
+//		if(n == Arrays.stream(arr).count()) {
+//			System.out.println("true");
+//		}else System.out.println("false");
+		
+		Set<Integer> set = new HashSet<>();
+		boolean result = Arrays.stream(arr).anyMatch(n -> !set.add(n));
+		System.out.println(result);
 	}
 
 	private static void SortValueInDesc(List<Integer> intList) {
