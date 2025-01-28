@@ -12,6 +12,27 @@ public class ArrayEasyProblems {
 
 //		Second largest element in an array
 		secondLargestElement(intArray);
+		
+//		Check if Array Is Sorted and Rotated
+		System.out.println(isArraySortedRotated(intArray));
+	}
+
+	public static boolean isArraySortedRotated(int[] nums) {
+		int count = 0;
+		int n = nums.length;
+		if (nums[0] < nums[n - 1]) {
+			count++;
+		}
+		for (int i = 0; i < n - 1; i++) {
+			if (nums[i] > nums[i + 1]) {
+				count++;
+			}
+			if (count > 1) {
+				return false;
+			}
+		}
+		return true;
+
 	}
 
 	private static void secondLargestElement(int[] intArray) {
