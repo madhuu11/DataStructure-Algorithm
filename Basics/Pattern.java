@@ -14,7 +14,7 @@ public class Pattern {
 		pattern8(n);
 		pattern9(n); //diamond problem
 		pattern10(n);
-		pattern11(6); //Binary Number Triangle Pattern
+		pattern11(n); //Binary Number Triangle Pattern
 		pattern12(n); //Number crown pattern
 	}
 
