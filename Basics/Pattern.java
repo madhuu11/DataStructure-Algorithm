@@ -14,7 +14,23 @@ public class Pattern {
 		pattern8(n);
 		pattern9(n); //diamond problem
 		pattern10(n);
-		pattern11(6);//Binary Number Triangle Pattern
+		pattern11(6); //Binary Number Triangle Pattern
+		pattern12(n); //Number crown pattern
+	}
+
+	private static void pattern12(int n) {
+		for(int i=1; i<=n; i++) {
+			for(int j=1; j<=i; j++) {
+				System.out.print(j);
+			}
+			for(int j=0; j<2*(n-i); j++) {
+				System.out.print(" ");
+			}
+			for(int j=i; j>0; j--) {
+				System.out.print(j);
+			}
+			System.out.println();
+		}
 	}
 
 	private static void pattern11(int n) {
