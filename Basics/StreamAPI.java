@@ -50,6 +50,23 @@ public class StreamAPI {
 //		Given an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct.
 		returnTrueIfDuplicates();
 
+//		How will you get the current date and time using Java 8 Date and Time API
+		getCurrentDateTime();
+		
+//		Write a Java 8 program to concatenate two Streams
+		concatenateTwoStreams(intList, nameList);
+
+	}
+
+	private static void concatenateTwoStreams(List<Integer> intList, List<String> nameList) {
+		Stream<Object> concat = Stream.concat(intList.stream(), nameList.stream());
+		concat.forEach(str -> System.out.print(str + " "));
+	}
+
+	private static void getCurrentDateTime() {
+		System.out.println("Current local date : "+ java.time.LocalDate.now());
+		System.out.println("Current local time : "+ java.time.LocalTime.now());
+		System.out.println("Current local date and time : "+ java.time.LocalDateTime.now());
 	}
 	
 	private static void returnTrueIfDuplicates() {
