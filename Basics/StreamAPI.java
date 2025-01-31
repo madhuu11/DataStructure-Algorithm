@@ -56,6 +56,22 @@ public class StreamAPI {
 //		Write a Java 8 program to concatenate two Streams
 		concatenateTwoStreams(intList, nameList);
 
+//		Java 8 program to perform cube on list elements and filter numbers greater than 50.
+		filterNumGreater50(intList);
+		
+//		Write a Java 8 program to sort an array and then convert the sorted array into Stream
+		sortArrayIntoStream();
+
+	}
+
+	private static void sortArrayIntoStream() {
+		int[] arr = {2,8,3,9,5};
+		Arrays.sort(arr); 
+		Arrays.stream(arr).forEach(n -> System.out.print(n + " "));
+	}
+
+	private static void filterNumGreater50(List<Integer> intList) {
+		intList.stream().map(n -> n*n*n).filter(n -> n>50).forEach(System.out::println);
 	}
 
 	private static void concatenateTwoStreams(List<Integer> intList, List<String> nameList) {
