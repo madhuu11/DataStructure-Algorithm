@@ -6,6 +6,46 @@ public class Basics {
 
 	public static void main(String[] args) {
 		findDataTypeValue();
+		decisionMaking();
+		switchCase();
+	}
+
+	private static void switchCase() {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the choice 1 or 2 : ");
+		int choice = sc.nextInt();
+		switch (choice) {
+		case 1:
+			System.out.println("Enter the radius value : ");
+			int r = sc.nextInt();
+			System.out.println(2.1415*r*r);
+			break;
+		case 2:
+			System.out.println("Enter the length value : ");
+			int l = sc.nextInt();
+			System.out.println("Enter the breadth value : ");
+			int b = sc.nextInt();
+			System.out.println(l*b);
+			break;
+
+		default:
+			break;
+		}
+	}
+
+	private static void decisionMaking() {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the n value : ");
+		int n = sc.nextInt();
+		System.out.println("Enter the m value : ");
+		int m = sc.nextInt();
+
+		if (n < m)
+			System.out.println("lesser");
+		else if (n > m)
+			System.out.println("greater");
+		else
+			System.out.println("equal");
 	}
 
 	private static void findDataTypeValue() {
