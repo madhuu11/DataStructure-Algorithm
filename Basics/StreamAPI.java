@@ -61,7 +61,15 @@ public class StreamAPI {
 		
 //		Write a Java 8 program to sort an array and then convert the sorted array into Stream
 		sortArrayIntoStream();
+				
+//		How to use map to convert object into Uppercase in Java 8
+		ConvertObjToUpperCase(nameList);
+	}
 
+	private static void ConvertObjToUpperCase(List<String> nameList) {
+		List<String> n = nameList.stream().map(String::toUpperCase).collect(Collectors.toList()); 
+		//if you are collecting result then store it in separate object.
+		System.out.println(n);
 	}
 
 	private static void sortArrayIntoStream() {
