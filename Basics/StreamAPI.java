@@ -64,6 +64,25 @@ public class StreamAPI {
 				
 //		How to use map to convert object into Uppercase in Java 8
 		ConvertObjToUpperCase(nameList);
+
+//		How to convert a List of objects into a Map by considering duplicated keys and store them in sorted order
+		convertObjToMap(nameList);
+		
+//		How to count each element/word from the String ArrayList in Java8
+		countStringListEle(nameList);
+		
+	}
+
+	private static void countStringListEle(List<String> nameList) {
+		System.out.println(nameList.stream().count()); // displays total elements
+		
+		// display count of each element
+		Map<String, Long> map = nameList.stream().collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+		System.out.println(map);
+	}
+
+	private static void convertObjToMap(List<String> nameList) {
+		
 	}
 
 	private static void ConvertObjToUpperCase(List<String> nameList) {
