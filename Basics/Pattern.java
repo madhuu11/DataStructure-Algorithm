@@ -16,6 +16,51 @@ public class Pattern {
 		pattern10(n);
 		pattern11(n); //Binary Number Triangle Pattern
 		pattern12(n); //Number crown pattern
+		pattern13(n); //increasing number
+		pattern14(n); //increasing letter
+		pattern15(n); //decreasing letter
+		pattern16(n); //Alpha ramp pattern
+	}
+
+	private static void pattern16(int n) {
+		char ch ='A';
+		for(int i=0; i<n; i++, ch++) {
+			for(int j=0; j<=i; j++) {
+				System.out.print(ch);
+			}
+//			ch++;
+			System.out.println();
+		}
+	}
+
+	private static void pattern15(int n) {
+		for(int i=0; i<n; i++) {
+			char ch ='A';
+			for(int j=n; j>i; j--) {
+				System.out.print(ch++);
+			}
+			System.out.println();
+		}
+	}
+
+	private static void pattern14(int n) {
+		for(int i=0; i<n; i++) {
+			char ch = 'A';
+			for(int j=0; j<=i; j++) {
+				System.out.print(ch++);
+			}
+			System.out.println();
+		}
+	}
+
+	private static void pattern13(int n) {
+		int a = 1;
+		for(int i=0; i<n; i++) {
+			for(int j=0; j<=i; j++) {
+				System.out.print(a++ +" " );
+			}
+			System.out.println();
+		}
 	}
 
 	private static void pattern12(int n) {
