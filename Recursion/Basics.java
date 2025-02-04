@@ -18,6 +18,42 @@ public class Recursion {
 
 //		Factorials Less than or Equal to n
 		nFactorial(n);
+
+//		Reverse a given array
+		reverseArray();
+	}
+
+	private static void reverseArray() {
+		int[] arr = { 1, 2, 3, 4, 5 };
+		int n = arr.length;
+
+		// Space-optimized iterative method
+//		int[] reverseArr = new int[n];
+//		for (int i = 0; i < arr.length; i++) {
+//			reverseArr[--n] = arr[i];
+//		}
+//		for (int i = 0; i < reverseArr.length; i++) {
+//			System.out.print(reverseArr[i] + " ");
+//		}
+
+		// Space-optimized iterative method
+//		int left = 0, right = n - 1;
+//		while (left < right) {
+//			int temp = arr[left];
+//			arr[left] = arr[right];
+//			arr[right] = temp;
+//			right--;
+//			left++;
+//		}
+//		for (int i = 0; i < arr.length; i++) {
+//			System.out.print(arr[i] + " ");
+//		}
+
+		// using recursion
+		rA_usingRecursion(arr, 0, n - 1);
+		for (int i = 0; i < arr.length; i++) {
+			System.out.print(arr[i] + " ");
+		}
 	}
 
 	private static void nFactorial(int n) {
