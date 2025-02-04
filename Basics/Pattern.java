@@ -20,6 +20,38 @@ public class Pattern {
 		pattern14(n); //increasing letter
 		pattern15(n); //decreasing letter
 		pattern16(n); //Alpha ramp pattern
+		pattern17(n); //Alpha Hill pattern
+		pattern18(n); //Alpha triangle
+	}
+
+	private static void pattern18(int n) {
+		for(int i=1; i<=n; i++) {
+			char ch='A';
+			ch = (char) (ch+n-i);
+			for(int j=0; j<i; j++, ch++) {
+				System.out.print(ch);
+			}
+			System.out.println();
+		}
+	}
+
+	private static void pattern17(int n) {
+		for(int i=0; i<n; i++) {
+			for(int j=1; j<=n-i-1; j++) {
+				System.out.print(" ");
+			}
+			char ch = 'A';
+			for(int j=1; j<=2*i+1; j++) {
+				System.out.print(ch);
+				if(j<=i) ch++;
+				else  ch--;
+				
+			}
+			for(int j=0; j<n-i-1; j++) {
+				System.out.print(" ");
+			}
+			System.out.println();
+		}
 	}
 
 	private static void pattern16(int n) {
