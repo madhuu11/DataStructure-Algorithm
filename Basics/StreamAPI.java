@@ -70,7 +70,31 @@ public class StreamAPI {
 		
 //		How to count each element/word from the String ArrayList in Java8
 		countStringListEle(nameList);
+
+//		How to find only duplicate elements with its count from the String ArrayList in Java8
 		
+		
+//		How to check if list is empty in Java 8 using Optional, if not null iterate through the list and print the object
+		
+		
+//		Write a Program to find the Maximum element in an array
+		findMaxElement();
+		
+//		Write a program to print the count of each character in a String
+		countEachChar("string data to count each character");
+
+		
+	}
+
+	private static void countEachChar(String string) {
+		Map<Character, Long> collect = string.chars().mapToObj(c -> (char) c).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+		System.out.println(collect);
+	}
+
+	private static void findMaxElement() {
+		int[] arr = {1,4,7,2,3};
+		int max = Arrays.stream(arr).max().getAsInt();
+		System.out.println(max);
 	}
 
 	private static void countStringListEle(List<String> nameList) {
