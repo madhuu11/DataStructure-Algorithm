@@ -13,7 +13,31 @@ public class StringEasyProblem {
 
 //		Remove Outermost Parentheses
 		removeOuterParenthesis(str1);
+
+//		check whether one string is a rotation of another
+		rotateString("aab", "aba");
 	
+	}
+
+	private static void rotateString(String s, String goal) {
+//		String result = s;
+//
+//		int n=0, l = s.length();
+//		while(n < l) {
+//			if(result.equals(goal)) {
+//				System.out.println("true");
+//				return;
+//			}
+//			result = result.substring(1, l) + result.charAt(0);
+//			n++;
+//			
+//		}
+//		System.out.println("false");
+		
+		// another way
+		System.out.println(s.length() == goal.length() && (s+s).contains(goal));
+		// s.length() == goal.length() is checked because the input s and goal lengths must be same, 
+		// if not then no use of concatination
 	}
 
 	private static void removeOuterParenthesis(String str1) {
