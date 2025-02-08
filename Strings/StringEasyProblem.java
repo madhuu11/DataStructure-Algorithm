@@ -16,7 +16,21 @@ public class StringEasyProblem {
 
 //		check whether one string is a rotation of another
 		rotateString("aab", "aba");
+
+//		Largest Odd Number in String
+		largestOddN("58882");
 	
+	}
+
+	private static void largestOddN(String string) {
+		String s = string;
+		while(!s.isEmpty()) {
+			if(Integer.parseInt(s)%2 != 0) {
+				System.out.println(s);
+				return;
+			}
+			s = s.substring(0, s.length()-1);
+		}
 	}
 
 	private static void rotateString(String s, String goal) {
