@@ -21,6 +21,32 @@ public class Recursion {
 
 //		Reverse a given array
 		reverseArray();
+
+//		Fibonacci Number
+		int fibonacci = fibonacci(4);
+		System.out.println(fibonacci);
+		
+//		Valid Palindrome
+		validPalindrome("A man, a plan, a canal: Panama");
+	}
+
+	private static void validPalindrome(String string) {
+		String s = string.toLowerCase().replaceAll("\\W+","").replaceAll("_", "");
+		int n = s.length();
+		for(int i=0; i<n/2; i++) {
+			if(s.charAt(i) != s.charAt(n-i-1)) {
+				System.out.println("False");
+				return;
+			}
+		}
+		System.out.println("True");
+	}
+
+	private static int fibonacci(int n) {
+		if(n == 0) return 0;
+		else if(n==1) return 1;
+		else
+		return fibonacci(n-1)+fibonacci(n-2);
 	}
 
 	private static void reverseArray() {
