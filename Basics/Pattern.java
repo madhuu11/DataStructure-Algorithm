@@ -23,6 +23,32 @@ public class Pattern {
 		pattern17(n); //Alpha Hill pattern
 		pattern18(n); //Alpha triangle
 		pattern19(n); //symmetric void 
+		pattern20(n); // symmetric butterfly
+	}
+
+	private static void pattern20(int n) {
+		int spaces = 2 * n - 2;
+		for (int i = 1; i <= 2 * n - 1; i++) {
+			int stars = i;
+			if (i > n) {
+				stars = 2 * n - i;
+			}
+			for (int j = 1; j <= stars; j++) {
+				System.out.print("*");
+			}
+			for (int j = 1; j <= spaces; j++) {
+				System.out.print(" ");
+			}
+			for (int j = 1; j <= stars; j++) {
+				System.out.print("*");
+			}
+			System.out.println();
+			if (i < n) {
+				spaces -= 2;
+			} else {
+				spaces += 2;
+			}
+		}
 	}
 
 	private static void pattern19(int n) {
