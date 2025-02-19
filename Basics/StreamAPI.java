@@ -72,10 +72,10 @@ public class StreamAPI {
 		countStringListEle(nameList);
 
 //		How to find only duplicate elements with its count from the String ArrayList in Java8
-		
+		findDuplicatesWithItsCount(nameList);
 		
 //		How to check if list is empty in Java 8 using Optional, if not null iterate through the list and print the object
-		
+		checkListEmptyUsingOptional(emptyList);
 		
 //		Write a Program to find the Maximum element in an array
 		findMaxElement();
@@ -84,6 +84,20 @@ public class StreamAPI {
 		countEachChar("string data to count each character");
 
 		
+	}
+
+	private static void findDuplicatesWithItsCount(List<String> nameList) {
+		Map<String, Long> collect = nameList.stream().filter(x -> Collections.frequency(nameList, x)>1).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+		
+		// another way
+//		Map<String, Long> collect = nameList.stream().collect(Collectors.groupingBy(Function.identity(), Collectors.counting())).entrySet().stream()
+//		.filter(entry -> entry.getValue() > 1).collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
+		
+		System.out.println(collect);
+	}
+
+	private static void checkListEmptyUsingOptional(List<String> nameList) {
+		Optional.ofNullable(nameList).ifPresent(System.out::println);
 	}
 
 	private static void countEachChar(String string) {
