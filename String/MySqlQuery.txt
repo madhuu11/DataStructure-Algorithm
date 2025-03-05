@@ -1,0 +1,5 @@
+// Max Salary
+SELECT MAX(salary) from EMPLOYEE;
+
+// print first 3 highest salary
+SELECT salary from EMPLOYEE order by salary desc limit 3;
