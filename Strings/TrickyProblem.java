@@ -6,6 +6,7 @@ public class TrickyProblem {
 		String str2 = "a1b3c2";
 		tp.toAlphaNumeric(str); // abbbcc -> a1b3c2
 		tp.toExpansion(str2); // a1b3c2 -> abbbcc
+		tp.toExpansionUsingStreams(str2); // a1b3c2 -> abbbcc
 	}
 
 	private void toExpansion(String str) {
@@ -22,6 +23,14 @@ public class TrickyProblem {
 			}
 		}
 		System.out.println(s);
+	}
+
+	private void toExpansionUsingStreams(String str2) {
+		Pattern pattern = Pattern.compile("([a-zA-Z])(\\d)");
+		Matcher matcher = pattern.matcher(str2);
+		String result = matcher.results().map(match -> match.group(1).repeat(Integer.parseInt(match.group(2))))
+				.collect(Collectors.joining());
+		System.out.println(result);
 	}
 
 	private void toAlphaNumeric(String str) {
