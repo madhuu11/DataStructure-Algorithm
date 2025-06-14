@@ -13,6 +13,8 @@ public class TwoSum {
 		int sum = 14;
 		int[] result = twoSum(array, sum);
 		int[] result2 = twoSum2(array, sum);
+		int[] result = twoSum3(array, sum); //using stream API
+
 		for (int i : result2) {
 			System.out.print(i + " ");
 		}
@@ -46,6 +48,17 @@ public class TwoSum {
 				left += 1;
 		}
 		return new int[] {};
-		
+	}
+
+	private static int[] twoSum3(int[] array, int sum) {
+		Map<Integer, Integer> map = new HashMap<>();
+		return IntStream.range(0, array.length).filter(i -> {
+			int complement = sum - array[i];
+			if (map.containsKey(complement)) {
+				return true;
+			}
+			map.put(array[i], i);
+			return false;
+		}).mapToObj(i -> new int[] { map.get(sum - array[i]), i }).findFirst().orElse(new int[] {});
 	}
 }
