@@ -83,6 +83,21 @@ public class StreamAPI {
 //		Write a program to print the count of each character in a String
 		countEachChar("string data to count each character");
 
+//		get the duplicates from hashmap using Stream API
+		getDuplicatesUsingStream();
+	}
+
+	private static void getDuplicatesUsingStream() {
+		HashMap<String, String> map = new HashMap<>();
+		map.put("a", "apple");
+		map.put("b", "banana");
+		map.put("c", "carrot");
+		map.put("d", "dragonFuit");
+		map.put("e", "apple");
+		map.put("f", "carrot");
+		
+		Map<String, Long> mapCount = map.values().stream().collect(Collectors.groupingBy(Function.identity(),Collectors.counting()));
+		mapCount.entrySet().stream().filter(i -> i.getValue()>1).map(Map.Entry::getKey).forEach(System.out::println);
 		
 	}
 
