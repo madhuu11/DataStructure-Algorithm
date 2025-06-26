@@ -15,6 +15,21 @@ public class ArrayEasyProblems {
 		
 //		Check if Array Is Sorted and Rotated
 		System.out.println(isArraySortedRotated(intArray));
+		
+//		find the missing element in an array
+		findMissingElement();
+		
+	}
+
+	private static void findMissingElement() {
+		int[] arr = {1,2,4,5,6};
+		int n= arr.length+1, sum=0;
+		int total= (n*(n+1))/2;
+		for (int i : arr) {
+			sum+=i;
+		}
+		int missingNo = total-sum;
+		System.out.println("the missing element in an array is : "+missingNo);
 	}
 
 	public static boolean isArraySortedRotated(int[] nums) {
