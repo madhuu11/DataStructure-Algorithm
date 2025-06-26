@@ -19,7 +19,22 @@ public class StringEasyProblem {
 
 //		Largest Odd Number in String
 		largestOddN("58882");
-	
+		
+//		find the palindrome in string
+		palindrome("racecar");
+		
+	}
+
+	private static void palindrome(String string) {
+		int left=0, right=string.length()-1;
+		while(left<right) {
+			if(string.charAt(left)!=string.charAt(right)) {
+				System.out.println("string is not a palindrome");
+				return;
+			}
+			left++; right--;
+		}
+		System.out.println("String is a palindrome");
 	}
 
 	private static void largestOddN(String string) {
