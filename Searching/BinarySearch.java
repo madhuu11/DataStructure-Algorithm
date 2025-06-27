@@ -19,4 +19,20 @@ public class BinarySearch {
 		}
 		return -1;
 	}
+
+	// find missing element index in sorted array or return its index where it should be based on its value
+	private static int missingEle() {
+		int[] nums = { 1,3,5,6};
+		int target = 7;
+		int left = 0, right = nums.length - 1;
+		while (left <= right) {
+			int mid = left + (right - left) / 2;
+			if (nums[mid] == target) {
+				return mid;
+			} else if (target < nums[mid])
+				right = mid - 1;
+			else 	left = mid + 1;
+		}
+		return left;
+	}
 }
